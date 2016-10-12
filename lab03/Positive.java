@@ -14,11 +14,11 @@ public class Positive {
 			Scanner input2 = new Scanner(System.in);
 			double userNum2 = input.nextDouble();
 
-		} else {
-			String negNum = userNum.toString();
-			negNum.replace("-", "");
-			double posNum = negNum.parseDouble();
+		} else if (userNum < 0) {
+			double posNum = (userNum * -1);
 			System.out.println("Your negative double, positive: "+posNum);
+		} else if (userNum !== double) {
+			System.out.println("You didn't enter a double!");
 		}
 	}
 }
