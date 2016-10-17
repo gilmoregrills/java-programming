@@ -17,6 +17,7 @@ public class Positive {
 		} else if (userNum < 0) {
 			double posNum = (userNum * -1);
 			System.out.println("Your negative double, positive: "+posNum);
+			//below should check if the number is a double or not
 		} else if (userNum !== double) {
 			System.out.println("You didn't enter a double!");
 		}
