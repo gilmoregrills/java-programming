@@ -2,24 +2,50 @@ import java.util.Scanner;
 
 public class Positive {
 	public static void main (String[] args) {
+		double userNum = 0;
+		double userNum2 = 0;
+		double difference = 0;
+		System.out.println("Enter a double value: ");	
+		userNum = getDouble();
+
+		isPositive(userNum);
+
 		
-		System.out.println("Enter a double value: ");
+		System.out.println("Enter another :");
+		userNum2 = getDouble();
+		
+		isPositive(userNum2);
+		if (userNum < userNum2) {
+			difference = userNum2 - userNum;
+		} else {
+			difference = userNum - userNum2;
+		}
+		System.out.println("The difference between those two numbers is: "+difference);
+	}
+	public static double getDouble () {
 
 		Scanner input = new Scanner(System.in);
-		double userNum = input.nextDouble();
+		boolean isDouble = false;
+		double theReturn = 0;
 		
-
-		if (userNum > 0) {
-			System.out.println("Enter another :");
-			Scanner input2 = new Scanner(System.in);
-			double userNum2 = input.nextDouble();
-
-		} else if (userNum < 0) {
-			double posNum = (userNum * -1);
-			System.out.println("Your negative double, positive: "+posNum);
-			//below should check if the number is a double or not
-		} else if (userNum !== double) {
-			System.out.println("You didn't enter a double!");
+		while (!isDouble) {
+			if (input.hasNextDouble()) {
+				theReturn = input.nextDouble();
+				isDouble = true;
+			} else {
+				System.out.println("You didn't enter a double: "+input.next());
+			}
 		}
+		return theReturn;
+
+	}
+	public static double isPositive(double a) {
+
+		if (a < 0) {
+			double posNum = (a * -1);
+			System.out.println("Your negative double, positive: "+posNum);
+			a = posNum;
+		} 
+		return a;
 	}
 }
