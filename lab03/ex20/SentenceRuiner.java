@@ -10,7 +10,8 @@ public class SentenceRuiner {
 		System.out.println("Please enter a string.");
 		Scanner input = new Scanner(System.in);
 		String sentence = input.nextLine();
-		char[] inputArray = sentence.toCharArray(); //can I condense this line and the above
+		char[] inputArray = sentence.toCharArray(); //can I condense this line and the above? 
+		//char[] inputArray = (input.nextLine()).toCharArray();
 
 		//System.out.println((char[])inputArray);
 
