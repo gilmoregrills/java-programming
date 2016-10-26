@@ -9,6 +9,8 @@ public class CounterTest {
 			testCounter.increase();
 			System.out.println("Count incremented by one: "+testCounter.getCount());
 		}
+		testCounter.setCount(14);
+		System.out.println("Count has been set to: "+testCounter.getCount());
 		for (int j = 0; j <= 15; j++) {
 			testCounter.decrease();	
 			System.out.println("Count decremented by one: "+testCounter.getCount());

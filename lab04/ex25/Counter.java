@@ -5,8 +5,8 @@
  * @Version 1.0
  */
 public class Counter {
-	int count = 0;
-	int max = 10;
+	private	int count = 0;
+	private int max = 10;
 	/**
 	 * The constuctor doesn't take any arguments, 
 	 * values of count and max can be set using
@@ -49,10 +49,10 @@ public class Counter {
 	 * the max, in which case it resets to 0.
 	 */
 	public void increase() {
-		if (count <= max) {
+		if (count < max) {
 			count++;
 		} else {
-			max = 0;
+			count = 0;
 		}
 	}
 	/**
