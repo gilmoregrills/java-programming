@@ -4,7 +4,8 @@ public class isInt {
 
 		if (number % 2 == 0) {
 			System.out.println("Yup! The number "+number+" is even!");
-		} else { System.out.println("Nope, the number "+number+" is odd af.");
+		} else { 
+			System.out.println("Nope, the number "+number+" is odd af.");
 		}
 	}
 }
