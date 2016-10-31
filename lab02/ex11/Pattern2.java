@@ -10,7 +10,7 @@ public class Pattern2 {
 		}
 	}
 	public static void main (String[] args) {
-		int fromMain = Integer.parseInt(args[0]);
-		printPattern(fromMain);	
+		int input = Integer.parseInt(args[0]);
+		printPattern(input);	
 	}
 }
