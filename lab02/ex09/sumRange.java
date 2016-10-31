@@ -5,14 +5,14 @@ public class sumRange {
 		boolean valid = (start < end);
 		int sum = 0;
 		if (valid) {
+			//was initially sum += start; start++; but that was dumb 
 			for (int i = start; i <= end; i++) {
-				sum += start;
-				start++;
+				sum += i;
 			};
 			System.out.println("The sum of all the integers in the given range is: "+sum+".");
 
 		} else {
-			System.out.println("This is not a valid range.");
+			System.out.println("The second number in the range must be greater than the first");
 		}
 	}
 }
