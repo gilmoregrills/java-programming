@@ -7,9 +7,6 @@ public class StringTest {
 		
 		Scanner input = new Scanner(System.in);
 		String words = input.nextLine();
-		//int wordsLength = String.length(words);
-		//String wordsUp = words.toUpperCase();
-		//String wordsLo = words.toLowerCase();
 
 		System.out.println("Your string is: "+ words);
 		

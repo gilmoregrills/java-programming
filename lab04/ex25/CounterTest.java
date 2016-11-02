@@ -18,7 +18,7 @@ public class CounterTest {
 		testCounter.reset();
 		System.out.println("The count has been reset and is now: "+testCounter.getCount());
 		
-		String a = testCounter.toString(testCounter.getCount());
+		String a = testCounter.toString(getCount());
 		if (!a.isEmpty()) {
 			System.out.println("Yup, toString() works");
 		} else {
