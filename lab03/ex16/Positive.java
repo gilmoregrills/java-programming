@@ -5,16 +5,15 @@ public class Positive {
 		double userNum = 0;
 		double userNum2 = 0;
 		double difference = 0;
-		System.out.println("Enter a double value: ");	
-		userNum = getDouble();
+		//asks for a double, checks if it's positive (converts to pos if it is)
+		//and assigns it to userNum
+		System.out.println("Enter a double value: ");
+		userNum = isPositive(getDouble());
 
-		isPositive(userNum);
-
-		
+		//as above, requests double, checks if positive, assigns to userNum2
 		System.out.println("Enter another :");
-		userNum2 = getDouble();
-		
-		isPositive(userNum2);
+		userNum2 = isPositive(getDouble());
+				
 		if (userNum < userNum2) {
 			difference = userNum2 - userNum;
 		} else {
@@ -40,12 +39,14 @@ public class Positive {
 
 	}
 	public static double isPositive(double a) {
-
+		//little bit hacky, if userNum is positive then I'm doing excess evaluations
 		if (a < 0) {
 			double posNum = (a * -1);
 			System.out.println("Your negative double, positive: "+posNum);
-			a = posNum;
-		} 
-		return a;
+			return posNum;
+		} else {
+			return a;
+		}
+	
 	}
 }
