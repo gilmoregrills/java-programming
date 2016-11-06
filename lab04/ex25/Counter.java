@@ -5,14 +5,16 @@
  * @Version 1.0
  */
 public class Counter {
-	private	int count = 0;
-	private int max = 10;
+	private	int count;
+	private int max;
 	/**
 	 * The constuctor doesn't take any arguments, 
 	 * values of count and max can be set using
 	 * the setMax() and setCount() methods.
 	 */	
 	public Counter() {
+		count = 0;
+		max = 10;
 	}
 	
 	/**
@@ -64,7 +66,7 @@ public class Counter {
 		if (count > 0) {
 			count--;
 		} else {
-			
+			count = 0;	
 		}
 	}
 	/**
@@ -81,7 +83,7 @@ public class Counter {
 	 * @param i The integer to be passed, can
 	 * be Counter.count or Counter.max.
 	 */ 
-	public String toString(int i) {
-		return Integer.toString(i);
+	public String toString() {
+		return "Count is currently: "+this.count+"\nMax is currently: "+this.max;
 	}
 }

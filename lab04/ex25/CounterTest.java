@@ -3,8 +3,7 @@ public class CounterTest {
 		Counter testCounter = new Counter();
 		testCounter.setCount(2);
 		testCounter.setMax(15);	
-		System.out.println("Count is currently: "+testCounter.getCount());
-		System.out.println("Max is currently: "+testCounter.getMax());
+		System.out.println(testCounter.toString());
 		for (int i = 0; i <= 15; i++) {
 			testCounter.increase();
 			System.out.println("Count incremented by one: "+testCounter.getCount());
@@ -18,11 +17,5 @@ public class CounterTest {
 		testCounter.reset();
 		System.out.println("The count has been reset and is now: "+testCounter.getCount());
 		
-		String a = testCounter.toString(getCount());
-		if (!a.isEmpty()) {
-			System.out.println("Yup, toString() works");
-		} else {
-			System.out.println("Nope, toString() is broken");	
-		}
 	}
 }

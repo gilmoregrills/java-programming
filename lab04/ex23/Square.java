@@ -3,8 +3,7 @@ public class Square {
 	static int side; //the length of a side
 
 	public static int area() {
-		int theArea = side * side;
-		return theArea;
+		return side * side;
 	}
 	
 	//constructor
