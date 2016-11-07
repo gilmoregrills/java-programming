@@ -39,7 +39,7 @@ public class Positive {
 
 	}
 	public static double isPositive(double a) {
-		//little bit hacky, if userNum is positive then I'm doing excess evaluations
+		//dumb, if userNum is positive then I'm doing excess evaluations
 		if (a < 0) {
 			double posNum = (a * -1);
 			System.out.println("Your negative double, positive: "+posNum);

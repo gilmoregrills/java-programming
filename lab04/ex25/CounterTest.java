@@ -16,6 +16,15 @@ public class CounterTest {
 		}
 		testCounter.reset();
 		System.out.println("The count has been reset and is now: "+testCounter.getCount());
-		
+		for (int k = 0; k <= 4; k++) {
+			testCounter.increase(6);
+			System.out.println("Count incremented by 6: "+testCounter.getCount());
+		}
+		System.out.println("Counter is now at: "+testCounter.getCount()+" Setting count to 10");
+		testCounter.setCount(10);
+		for (int l = 0; l <= 2; l++) {
+			testCounter.decrease(6);
+			System.out.println("Count decremented by 6: "+testCounter.getCount());
+		}
 	}
 }

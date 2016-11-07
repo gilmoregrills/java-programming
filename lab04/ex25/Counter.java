@@ -57,6 +57,20 @@ public class Counter {
 			count = 0;
 		}
 	}
+
+	/**
+	 * This will increment the value of count 
+	 * by a specified amount.
+	 * @param n The value to increment by.
+	 */
+	public void increase(int n) {
+		if (count < max && (count + n) > max) {
+			count = 0;
+		} else {
+			count += n;
+		}
+	}
+
 	/**
 	 * This will decrement the value of count
 	 * by 1, unless count is already 0, in
@@ -70,6 +84,18 @@ public class Counter {
 		}
 	}
 	/**
+	 * This will decrement the value of count
+	 * by the specified amount.
+	 * @param n The value to decrement by. 
+	 */
+	public void decrease(int n) {
+		if (count > 0 && (count - n) < 0) {
+			count = 0;
+		} else if (count > 0) { 
+			count -= n;
+		}
+	}
+	/**
 	 * This will reset the value of count to
 	 * 0, and print a confirmation.
 	 */
@@ -78,12 +104,10 @@ public class Counter {
 		System.out.println("Counter Reset!");
 	}
 	/**
-	 * This method returns as a string the 
-	 * value of any int passed as a parameter,
-	 * @param i The integer to be passed, can
-	 * be Counter.count or Counter.max.
+	 * This method returns as a string the current
+	 * values of count and max.
 	 */ 
 	public String toString() {
-		return "Count is currently: "+this.count+"\nMax is currently: "+this.max;
+		return "Count: "+this.count+"\nMax: "+this.max;
 	}
 }

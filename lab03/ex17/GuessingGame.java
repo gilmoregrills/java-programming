@@ -10,7 +10,7 @@ public class GuessingGame {
 	public static int generator () {
 	//method generates an int between 1 and 100, returns an int
 		Random randomGenerator = new Random();
-		int randomInt = randomGenerator.nextInt(100);
+		int randomInt = randomGenerator.nextInt(101);
 		return randomInt;
 	}
 
