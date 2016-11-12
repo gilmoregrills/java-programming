@@ -24,7 +24,9 @@ public class StudentList {
 	
 	public void printList(){
 		System.out.println("--Begin--");
-		//WRITE YOUR CODE HERE
+		for (Student i : list) {
+			System.out.println(i.toString());
+		}
 		System.out.println("--End--");
 	}
 	
@@ -34,8 +36,8 @@ public class StudentList {
 	 *@param    The student
 	 */
 	public void addToList(Student s){
-		//WRITE YOUR CODE HERE
-
+		list.add(s);
+		System.out.println(s.getName()+" has been added to the list");
 	}
 
 	/**
@@ -44,7 +46,8 @@ public class StudentList {
 	 *@param    The student
 	 */
 	public void removeFromList(Student s){
-		//WRITE YOUR CODE HERE
+		list.remove(s);
+		System.out.println(s.getName()+" has been removed from the list");
 	}
 	
 	/**
@@ -58,7 +61,7 @@ public class StudentList {
 		//create 3 student objects
 		Student s1 = new Student("John Smith", "js@qmul.ac.uk", 2008);
 		Student s2 = new Student("Tom Will", "tw@qmul.ac.uk", 2007);
-		Student s3 =  //WRITE YOUR OWN DETAILS HERE
+		Student s3 = new Student("Robin Yonge", "ry@qmul.ac.uk", 2016);
 		
 		//add the three students to the list
 		studentList.addToList(s1);
