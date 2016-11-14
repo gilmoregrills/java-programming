@@ -6,8 +6,8 @@ public class LetterGrades1 {
 		char gradeBand = 'U';	
 		ArrayList<String> stringList = new ArrayList(Arrays.asList(args));
 
-		for (String i : stringList) {
-		int tmp = Integer.parseInt(i);	
+		for (int i = 0; i < stringList.size(); i++) {
+		int tmp = Integer.parseInt(stringList.get(i));	
 			if (tmp >= 50 && tmp < 55) {
 				gradeBand = 'D';
 			} else if (tmp >= 55 && tmp < 60) {
