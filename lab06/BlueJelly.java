@@ -1,7 +1,8 @@
 public class BlueJelly extends Jelly {
 	//instance variables
-	public String jellyColour = "blue";
-
-	//previously had an attack method 
-	//because the sheet is misleading
+	protected String jellyColour = "blue";
+	
+	public BlueJelly(int health, String name) {
+		super(health, name);
+	}
 }
