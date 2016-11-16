@@ -19,6 +19,10 @@ public class Tower {
 		else System.out.println("Tower at maximum level");
 	}
 
+	public String toString() {
+		return name+" : "+level;
+	}
+
 	/*public int compareTo(Tower arg0) {
 		if (this.level > arg0.level) return 1;
 		else return -1;
