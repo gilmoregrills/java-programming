@@ -1,0 +1,1 @@
+All of the files in these exercise folders are versioned such that they only apply to the exercise in question. Only exercise-relevant files are actually stored in each exercise folder. ex38, for example, has all the files at their latest iteration. 

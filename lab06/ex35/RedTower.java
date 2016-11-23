@@ -4,4 +4,8 @@ public class RedTower extends Tower {
 		super();
 		this.name = "Red Tower";
 	}
+
+	public int attackJelly() {
+		return 2;
+	}
 }

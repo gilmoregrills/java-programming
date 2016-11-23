@@ -1,5 +1,5 @@
 
-public abstract Tower {
+public abstract class Tower {
 	public static final int LEVEL_1 = 1;
 	public static final int LEVEL_2 = 2;
 	public static final int LEVEL_3 = 3;
@@ -23,9 +23,8 @@ public abstract Tower {
 		return name+" : "+level;
 	}
 
-	public abstract int attackJelly() {
-		return level;
-	}
+	public abstract int attackJelly();
+		//return attack damage as int
 
 	/*public int compareTo(Tower arg0) {
 		if (this.level > arg0.level) return 1;
