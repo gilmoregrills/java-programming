@@ -1,5 +1,5 @@
 
-public class Tower {
+public abstract Tower {
 	public static final int LEVEL_1 = 1;
 	public static final int LEVEL_2 = 2;
 	public static final int LEVEL_3 = 3;
@@ -21,6 +21,10 @@ public class Tower {
 
 	public String toString() {
 		return name+" : "+level;
+	}
+
+	public abstract int attackJelly() {
+		return level;
 	}
 
 	/*public int compareTo(Tower arg0) {
