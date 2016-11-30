@@ -3,30 +3,44 @@ import java.awt.*;
 
 public class Calc extends JFrame {
 
-	private JPanel mainPanel;
-	private JButton button1;
-	private JButton button2;
-	private JButton button3;
-
 	public Calc() {
 		this.setTitle("Calculator");
 		this.setSize(500, 200);
-		
-		button1 = new JButton("1");
-		button2 = new JButton("2");
-		button3 = new JButton("3");
-		
-		mainPanel = new JPanel();
-		mainPanel.add(button1);
-		mainPanel.add(button2);
-		mainPanel.add(button3);
+		/**
+		 * Creating an array of all the buttons
+		 * then using a loop to create number
+		 * buttons, with the two extra buttons 
+		 * and textfield done after
+		 */
+		JButton[] buttons = new JButton[12];
+		for (int i = 0; i <= 9; i++) {
+			String label = Integer.toString(i);
+			buttons[i] = new JButton(label);
+		}
+		buttons[10] = new JButton(".");
+		buttons[11] = new JButton("CE");
+		JTextField readout = new JTextField(3);
+		/**
+		 * Adding all the buttons to the panel
+		 * along with the textfield
+		 */
+		JPanel mainPanel = new JPanel();
+		mainPanel.add(readout);		
+		for (int j = 11; j >= 0; j--) {
+			mainPanel.add(buttons[j]);
+		}
 
+		/**
+		 * Adding all the buttons to the container
+		 * along with the textfield
+		 */
 		Container cont = this.getContentPane();
-		cont.setLayout(new GridLayout(3, 4));
-		cont.add(mainPanel);
-		cont.add(button1, gridLayout(1, 1));
-		cont.add(button2, gridLayout(1, 2));
-		cont.add(button3, gridLayout(1, 3));
+		//cont.add(mainPanel);
+		cont.add(readout);
+		cont.setLayout(new GridLayout(4, 3));
+		for (int k = 11; k >= 0; k--) {	
+			cont.add(buttons[k]);
+		}
 		this.pack();
 		this.setVisible(true);
 	}
