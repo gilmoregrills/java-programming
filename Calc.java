@@ -12,20 +12,21 @@ public class RGButtons extends JFrame {
 		this.setTitle("Red, Green, or Blue??");
 		this.setSize(500, 200);
 		
-		buttonRed = new JButton("Red");
-		buttonBlue = new JButton("Blue");
-		buttonGreen = new JButton("Green");
+		button1 = new JButton("1");
+		button2 = new JButton("2");
+		button3 = new JButton("3");
 		
 		mainPanel = new JPanel();
-		mainPanel.add(buttonRed);
-		mainPanel.add(buttonBlue);
-		mainPanel.add(buttonGreen);
+		mainPanel.add(button1);
+		mainPanel.add(button2);
+		mainPanel.add(button3);
 
 		Container cont = this.getContentPane();
-		cont.add(mainPanel, BorderLayout.NORTH);
-		cont.add(buttonRed, BorderLayout.WEST);
-		cont.add(buttonBlue, BorderLayout.CENTER);
-		cont.add(buttonGreen, BorderLayout.EAST);
+		cont.setLayout(new GridLayout(3, 4));
+		cont.add(mainPanel);
+		cont.add(button1, GridLayout(1, 1));
+		cont.add(button2, GridLayout(1, 2));
+		cont.add(button3, GridLayout(1, 3));
 		this.pack();
 		this.setVisible(true);
 	}
