@@ -9,8 +9,9 @@ public class ClickChase extends JFrame
 	implements MouseListener {
 
 	private JPanel mainPanel;
-	private String clickMe = "Click me!";
 	private JButton[] numButtons = new JButton[9];
+	private Random r = new Random();
+	private int tmp;
 	private int rando;
 
 	private void initUI() {
@@ -26,7 +27,7 @@ public class ClickChase extends JFrame
 	}
 	
 	private void createLayout() {
-		GridLayout layout = new GridLayout(3, 3, 3, 3);
+		GridLayout layout = new GridLayout(3, 3);
 		mainPanel = new JPanel(layout);
 
 		for (int j = 0; j < 9; j++) {
@@ -36,19 +37,21 @@ public class ClickChase extends JFrame
 	}
 
 	private void randomLabel() {
-		Random r = new Random();
 		numButtons[rando].setText("");
 		numButtons[rando].removeMouseListener(this);
-		rando = r.nextInt(9);
+		tmp = rando;
+		while (tmp == rando) {
+			rando = r.nextInt(9);
+		}
 		numButtons[rando].setText("Click me!");
 		numButtons[rando].addMouseListener(this);
+		
 			
 	}
 
 	public void mousePressed(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e) {}	
 	public void mouseEntered(MouseEvent e) {
-		System.out.println("Moused over!");
 		randomLabel();
 	}	
 	public void mouseExited(MouseEvent e) {}
