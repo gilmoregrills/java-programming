@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.ComponentOrientation;
-
+//textArea.setEditable(false);
 public class Calc extends JFrame {
 
 	//declare all the variables/objects 
