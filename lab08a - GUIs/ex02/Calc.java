@@ -11,23 +11,30 @@ public class Calc extends JFrame {
 	private JButton ceButton;
 	private JButton dotButton;
 	private JButton[] numButtons;
+	private String view = "";
 
 	private void initUI() {
 		numButtons = new JButton[10];
 		for (int i = 9; i >= 0; i--) {
 			String label = Integer.toString(i);
 			numButtons[i] = new JButton(label);
+			numButtons[i].addActionListener((ActionEvent click) -> {
+				updateReadout(label);
+			});
 		}
 
 		readout = new JTextField(14);
 		
 		ceButton = new JButton("CE");
 		ceButton.addActionListener((ActionEvent click) -> {
-			readout.setText("");
+			view = "";
+			updateReadout("");
 		});
 		dotButton = new JButton(".");
-		ceButton.addActionListener((ActionEvent click) -> {
-			//add a dot
+		dotButton.addActionListener((ActionEvent click) -> {
+			if (view.indexOf(".") == -1) {
+				updateReadout(".");
+			}
 		});
 
 		createLayout();
@@ -52,6 +59,18 @@ public class Calc extends JFrame {
 		mainPanel.add(textPanel);
 		mainPanel.add(numPanel);
 		this.setContentPane(mainPanel);
+	}
+
+	private void updateReadout(String input) {
+	//add text to textfield method
+	//each key when pressed adds text to a variable
+	//that represents the contents of readout then 
+	//calls readout.setText(String)
+	//pressing ceButton sets the string to "" and
+	//pressing dotButton checks if there is already
+	//a "." there before it adds one
+		view = view + input;
+		readout.setText(view);		
 	}
 	
 	public Calc() {
