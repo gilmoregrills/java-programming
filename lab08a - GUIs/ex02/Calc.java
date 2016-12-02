@@ -1,48 +1,61 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class Calc extends JFrame {
 
-	public Calc() {
-		this.setTitle("Calculator");
-		this.setSize(500, 200);
-		/**
-		 * Creating an array of all the buttons
-		 * then using a loop to create number
-		 * buttons, with the two extra buttons 
-		 * and textfield done after
-		 */
-		JButton[] buttons = new JButton[12];
-		for (int i = 0; i <= 9; i++) {
+	private JTextField readout;
+	private JPanel numPanel;
+	private JPanel textPanel;
+	private JPanel mainPanel;
+	private JButton ceButton;
+	private JButton dotButton;
+	private JButton[] numButtons;
+
+	private void initUI() {
+		numButtons = new JButton[10];
+		for (int i = 9; i >= 0; i--) {
 			String label = Integer.toString(i);
-			buttons[i] = new JButton(label);
-		}
-		buttons[10] = new JButton(".");
-		buttons[11] = new JButton("CE");
-		JTextField readout = new JTextField(3);
-		/**
-		 * Adding all the buttons to the panel
-		 * along with the textfield
-		 */
-		JPanel mainPanel = new JPanel();
-		mainPanel.add(readout);		
-		for (int j = 11; j >= 0; j--) {
-			mainPanel.add(buttons[j]);
+			numButtons[i] = new JButton(label);
 		}
 
-		/**
-		 * Adding all the buttons to the container
-		 * along with the textfield
-		 */
-		Container cont = this.getContentPane();
-		//cont.add(mainPanel);
-		cont.add(readout);
-		cont.setLayout(new GridLayout(4, 3));
-		for (int k = 11; k >= 0; k--) {	
-			cont.add(buttons[k]);
+		readout = new JTextField(14);
+		
+		ceButton = new JButton("CE");
+		ceButton.addActionListener((ActionEvent click) -> {
+			readout.setText("");
+		});
+		dotButton = new JButton(".");
+		ceButton.addActionListener((ActionEvent click) -> {
+			//add a dot
+		});
+
+		createLayout();
+		setTitle("Taschenrechner");
+		setSize(175, 175);
+		setVisible(true);
+	}
+
+	private void createLayout() {
+		GridLayout layout = new GridLayout(4, 3, 3, 3);
+		textPanel = new JPanel();	
+		textPanel.add(readout);
+
+		numPanel = new JPanel(layout);
+		for (int j = 9; j >= 0; j--) {
+			numPanel.add(numButtons[j]);
 		}
-		this.pack();
-		this.setVisible(true);
+		numPanel.add(dotButton);
+		numPanel.add(ceButton);
+
+		mainPanel = new JPanel();
+		mainPanel.add(textPanel);
+		mainPanel.add(numPanel);
+		this.setContentPane(mainPanel);
+	}
+	
+	public Calc() {
+		initUI();
 	}
 
 	public static void main(String[] args) {
