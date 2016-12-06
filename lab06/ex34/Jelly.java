@@ -1,8 +1,8 @@
 
 public class Jelly {
 	//instance variables
-	protected int health; // health of the Jelly (max health is 100).
-	protected String name;
+	private int health; // health of the Jelly (max health is 100).
+	private String name;	
 	/**
 	 * method checks if the jelly is alive, if a jelly's
 	 * HP drops below 0 they are not alive.
@@ -10,7 +10,6 @@ public class Jelly {
 	public boolean isAlive() {
 		return (health > 0) ? true : false;
 	}
-
 	/**
 	 * getter for the health property
 	 */

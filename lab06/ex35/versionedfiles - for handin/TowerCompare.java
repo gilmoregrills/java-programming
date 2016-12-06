@@ -1,6 +1,8 @@
-Import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class TowerTest {
+
+public class TowerCompare {
 	public static void main (String[] args){
 		ArrayList<Tower> towerList = new ArrayList<Tower>();
 		towerList.add(new Tower());
@@ -13,9 +15,17 @@ public class TowerTest {
 		blueTower2.increaseLevel();
 		blueTower2.increaseLevel();
 		towerList.add(blueTower2);
+		BlueTower blueTower3 = new BlueTower();
+		blueTower3.increaseLevel(); 
+		blueTower3.increaseLevel();
+		towerList.add(blueTower2);
 		towerList.add(new RedTower());
+		RedTower redTower1 = new RedTower();
+		redTower1.increaseLevel();
+		towerList.add(redTower1);
 		
-		
-		for (Tower t: towerList) System.out.println(t);
+		Collections.sort(towerList);
+
+		for (Tower t: towerList) System.out.println(t.name + " " + t.level);
 	}
 }
