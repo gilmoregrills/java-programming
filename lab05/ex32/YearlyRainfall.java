@@ -7,7 +7,7 @@
  * @date 13/11/16
  */
 
-class YearlyRainfall {
+public class YearlyRainfall {
 	//instance variables
 	int[] year = new int[12];
 	RainfallDisplay display = new RainfallDisplay();
@@ -39,21 +39,21 @@ class YearlyRainfall {
 	 * method returns the amount of rainfall in 
 	 * a given month.
 	 * @param month the number representing the 
-	 * index of that month from 0-11.
+	 * index of that month from 1-12.
 	 */
 	public int getMonthAmount(int month) {
-		return year[month];
+		return year[month - 1];
 	}
 	/**
 	 * method sets the amount of rainfall for a 
 	 * given month.
 	 * @param month the int index representing the 
-	 * index of that month from 0-11.
+	 * index of that month from 1-12.
 	 * @param amount the int representing the amount
 	 * of rainfall that fell in that month. 
 	 */
 	public void setMonthAmount(int month, int amount) {
-		year[month] = amount;
+		year[month - 1] = amount;
 	}
 	/**
 	 *  method returns a double value that 

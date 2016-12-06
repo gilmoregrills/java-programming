@@ -17,7 +17,7 @@ class RainfallMain {
 		lastYear.setData(lastYear.year, labels); 
 
 		while (true) {
-			System.out.println("Month: 0-11? ");
+			System.out.println("Month: 1-12? ");
 			int month = keyboard.nextInt();
 			System.out.println("Amount? ");
 			int amount = keyboard.nextInt();
