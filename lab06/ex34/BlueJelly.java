@@ -12,6 +12,5 @@ public class BlueJelly extends Jelly {
 	 */	
 	public BlueJelly(int health, String name) {
 		super(health, name);
-		jellyColour = "blue";
 	}
 }
