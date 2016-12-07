@@ -4,19 +4,16 @@ import java.util.*;
 public class GenderNeutral {
 	public static void main(String[] args) {
 		
-		//creating the two mega-arrays of names/numbers
-		//String[] boys = readFile("/home/gilmoregrills/literally-nothing-at-all/lab07/ex41/boynames.txt");
-		//String[] girls = readFile("/home/gilmoregrills/literally-nothing-at-all/lab07/ex41/girlnames.txt");
-
 		//getting the name from the user
 		String name = getName();
 		//Confirming input
 		System.out.println("Entered name is: "+name);
 	
 	        //Checking the boy names, then the girl names, printing results\
-		//calling the file-to-array method as the String[] arg in searchNParse
-		searchNParse(name, readFile("/home/gilmoregrills/literally-nothing-at-all/lab07/ex41/boynames.txt"), "boys");	 
-		searchNParse(name, readFile("/home/gilmoregrills/literally-nothing-at-all/lab07/ex41/girlnames.txt"), "girls");
+		//calling the readFile file-to-array method to create an array 
+		//searchNParse to loop through
+		searchNParse(name, readFile("boynames.txt"), "boys");	 
+		searchNParse(name, readFile("girlnames.txt"), "girls");
 
 	}
 	public static String[] readFile(String file) {
