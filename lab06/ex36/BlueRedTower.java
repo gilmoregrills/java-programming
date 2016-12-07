@@ -7,6 +7,7 @@ public class BlueRedTower extends Tower {
 	}
 
 	public int attackJelly() {
+		System.out.println(this.name+" attacks Jelly for 1 point damage.");
 		return 1;
 	}
 	
