@@ -20,8 +20,7 @@ public class StudentList {
 	
 	/**
 	 *  a method to print off all ArrayList elements
-	 */
-	
+	 */	
 	public void printList(){
 		System.out.println("--Begin--");
 		for (Student i : list) {
