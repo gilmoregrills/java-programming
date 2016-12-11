@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 import java.util.Random;
-//need the label to disappear on mouseover
 
 public class ClickChase extends JFrame 
 	implements MouseListener {
@@ -14,6 +13,11 @@ public class ClickChase extends JFrame
 	private int tmp;
 	private int rando;
 
+	/**
+	 * Method creates all the buttons in loop,
+	 * then creates the layout, sets the title
+	 * etc
+	 */
 	private void initUI() {
 		for (int i = 0; i < 9; i++) {
 			numButtons[i] = new JButton();
@@ -26,6 +30,10 @@ public class ClickChase extends JFrame
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Method creates a new GridLayout and JPanel
+	 * then adds all the buttons to the panel. 
+	 */
 	private void createLayout() {
 		GridLayout layout = new GridLayout(3, 3);
 		mainPanel = new JPanel(layout);
@@ -36,6 +44,15 @@ public class ClickChase extends JFrame
 		this.setContentPane(mainPanel);
 	}
 
+	/**
+	 * Method initially removes the text
+	 * and MouseListener from the current button
+	 * then generates a new random number repre-
+	 * senting the button it will go to next
+	 * (while loop so it wont be the same one)
+	 * once destination button decided, adds 
+	 * text and listener to it.
+	 */
 	private void randomLabel() {
 		numButtons[rando].setText("");
 		numButtons[rando].removeMouseListener(this);
@@ -49,14 +66,22 @@ public class ClickChase extends JFrame
 			
 	}
 
+	//all the abstract MouseListener methods start
 	public void mousePressed(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e) {}	
 	public void mouseEntered(MouseEvent e) {
 		randomLabel();
+		//when the mouse enters the button area, calling
+		//randomLabel moves it to a new button
 	}	
 	public void mouseExited(MouseEvent e) {}
 	public void mouseClicked(MouseEvent e) {}
-
+	//all the abstract MouseListener Methods end
+	/**
+	 * Constructor, on instantiaion the UI is 
+	 * initialized and randomLabel is called 
+	 * once to start the game off
+	 */
 	public ClickChase() {
 		initUI();
 		randomLabel();
