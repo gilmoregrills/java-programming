@@ -52,6 +52,11 @@ public class RGButtons extends JFrame {
 		contentPane.add(colorField);
 		this.setContentPane(contentPane);
 	}
+
+	/**
+	 * Constructor, calls initializeUI() on
+	 * instantiation, and GUI is built from there
+	 */
 	public RGButtons() {
 		initializeUI();
 		}

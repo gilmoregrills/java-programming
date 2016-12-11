@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.ComponentOrientation;
-//textArea.setEditable(false);
+
 public class Calc extends JFrame {
 
 	//declare all the variables/objects 
@@ -51,7 +51,7 @@ public class Calc extends JFrame {
 		setTitle("Taschenrechner");
 		setSize(175, 175);
 		setVisible(true);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); //does ctrl-c on cmd line on window-close
 	}
 
 	/**
@@ -67,6 +67,7 @@ public class Calc extends JFrame {
 		GridLayout layout = new GridLayout(4, 3, 3, 3);
 		textPanel = new JPanel();	
 		textPanel.add(readout);
+		readout.setEditable(false); //removes ability to use k/b input
 
 		numPanel = new JPanel(layout);
 		numPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
