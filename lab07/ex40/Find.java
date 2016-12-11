@@ -1,14 +1,18 @@
-//if you search some of the terms then you'll get a haiku!
+
 import java.util.Scanner;
 import java.io.*;
 
 public class Find {
 	public static void main(String[] args) {
+		finder(args[0], args[1]);	
+	}
+
+	public static void finder(String search, String filePath) {
 		Scanner reader = null;
 		try {
 			//declare all the variables, create the file and Scanner objects
-			String searchTerm = args[0];
-			File inputFile = new File(args[1]);
+			String searchTerm = search;
+			File inputFile = new File(filePath);
 			String line = "";
 			int lineNumber = 0;
 			reader = new Scanner(inputFile);
@@ -31,6 +35,6 @@ public class Find {
 		} finally {
 			reader.close();
 		}
-			
+	
 	}
 }
