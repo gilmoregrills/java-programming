@@ -94,6 +94,8 @@ public class Calc extends JFrame {
 	}
 	/**
 	 * Constructor, just calls initUI()
+	 * and lets chain of methods take it
+	 * from there. 
 	 */	
 	public Calc() {
 		initUI();
