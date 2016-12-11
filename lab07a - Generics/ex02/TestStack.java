@@ -1,9 +1,11 @@
+
 public class TestStack {
 	public static void main(String[] args) {
 		Stack<String> str = new Stack<String>();
 		Stack<Integer> ints = new Stack<Integer>();
 		Stack<Boolean> bools = new Stack<Boolean>();
-
+		//push method used to add items to stack
+		//pop method used to print the last item added
 		str.push("Pardon");
 		System.out.println(str.pop()+" added to Stack str");
 		str.push("me");
