@@ -1,3 +1,4 @@
+//too much stuff in the try block, not that cool
 import java.io.*;
 import java.util.*;
 
@@ -16,10 +17,13 @@ public class GenderNeutral {
 		searchNParse(name, readFile("girlnames.txt"), "girls");
 
 	}
+
+	/**
+	 * Method takes the file path and turns each 
+	 * line into an element of the output array
+	 */
 	public static String[] readFile(String file) {
 		String[] output = new String[1000];
-		//had to be declared above b/c scope, feel like it should work
-		//to have it declared in the try and use it in the finally tho
 		try {
 			//creating a BR from the file path passed as arg
 			BufferedReader input = new BufferedReader(new FileReader(file));
@@ -39,17 +43,29 @@ public class GenderNeutral {
 			return output;
 		}
 	}
+
+	/**
+	 * Method creates a scanner, gets name input
+	 * from user, then capitalises the first 
+	 * char whether or not it needs it. 
+	 */
 	public static String getName() {
 		Scanner input = null;
 	
 		input = new Scanner(System.in);
 		System.out.println("Please enter a first name");
-		//store input in a var named output
 		String output = input.next();
-		//line capitalizes the first letter whether or not it needs it pre-return
 		return output.substring(0, 1).toUpperCase() + output.substring(1);
 		
 	}
+
+	/**
+	 * Method takes the input name (output of 
+	 * getName), the names array, and a string
+	 * for the gender of the names list you're checking
+	 * then checks every element of the array and 
+	 * prints the results.
+	 */ 
 	public static void searchNParse(String name, String[] names, String gender) {
 		boolean searching = true;
 		int counter = 0;

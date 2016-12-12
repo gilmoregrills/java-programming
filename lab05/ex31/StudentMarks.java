@@ -32,13 +32,40 @@ public class StudentMarks {
 	}
 
 	/**
-	 *  method returns the highest of the student's 7 marks. 
+	 *  method returns the last instance of the
+	 *  highest of the students marks 
 	 */
 	public double highestMark() {
 		double tmp = 0;
-		for (double d : marks) {
-			tmp = (d > tmp) ? tmp = d : tmp;
+		int counter = 0;
+		for (int i = 0; i < marks.length; i++) {
+		//for (double d : marks) {
+		//	tmp = (d > tmp) ? tmp = d : tmp;#
+			if (marks[i] >= tmp) {
+				tmp = marks[i];
+			        counter = i;
+			}	       
 		}
-		return tmp;
+		return counter;
 	}
+	
+	/**
+	 * same as highestMark but instead it only
+	 * returns the first instance
+	 */
+	public double otherHighestMark() {
+		double tmp = 0;
+		int counter = 0;
+		for (int i = 0; i < marks.length; i++) {
+		//for (double d : marks) {
+			//tmp = (d == tmp) ? tmp = d : tmp;
+			if (tmp < marks[i]) {
+				tmp = marks[i];
+				counter = i;
+			} 
+		}
+		return counter;
+	}
+
+
 }
